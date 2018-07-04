@@ -1,14 +1,24 @@
-from .fileIO import read_zip,read_pickle
 from rdkit import Chem
 import os
 from rdkit.Chem.SaltRemover import SaltRemover
 import pandas as pd
+import gzip
+import pickle
 
 smile_data = ['%', 't', 'e', '9', 'i', "7", "6", "o", "]", "3", "s", \
               "(", "-", "S", "/", "B", "4", "[", ")", "#", "I", "l", \
               "O", "H", "c", "1", "@", "=", "n", "P", "8", "C", "2", \
               "F", "5", "r", "N", "+", "\\", " "]
 
+
+def read_pickle(pickle_file):
+    p = pickle.load(open(pickle_file, 'rb'))
+    return p
+
+def read_zip(file_name):
+    with gzip.open(file_name, 'rb') as f:
+        output_object = pickle.load(f)
+    return output_object
 
 def get_suffix(file_name):
     file_name, file_extension = os.path.splitext(file_name)

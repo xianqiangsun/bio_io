@@ -6,7 +6,7 @@ from rdkit import Chem
 
 from Bio.PDB import *
 
-from .utility import Read
+from BioIO.utility import Read
 
 
 def read_pickle(pickle_file):

@@ -23,10 +23,6 @@ setup(name='BioIO',
       install_requires=['numpy',
                         'pandas',
                         'scipy',
-                        'rdkit',
-                        'json',
                         'matplotlib',
-                        'python-dateutil>=2.5.0',
-                        'Bio',
                         'bioservices'
                         ])
