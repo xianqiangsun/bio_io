@@ -1,0 +1,55 @@
+package:
+  name: bioIO
+  version: 1.0.1
+
+build:
+  number: 1.0.1
+  script: python setup.py install --single-version-externally-managed --record record.txt
+source:
+  path: ./
+
+requirements:
+  build:
+    - python {{ python }}
+    - setuptools
+    - numpy
+    - scipy
+    - scikit-learn
+    - pandas
+    - rdkit
+    - h5py
+    - hdf5
+    - pandas
+    - yaml
+    - matplotlib
+    - python-dateutil
+    - bioservices
+    - Bio
+
+
+  run:
+    - python {{ python }}
+    - setuptools
+    - numpy
+    - pandas
+    - rdkit
+    - h5py
+    - hdf5
+    - pandas
+    - yaml
+    - matplotlib
+    - bioservices
+    - Bio
+
+#test:
+  #requires:
+  #  - numpy
+  #  - scipy
+  #  - scikit-learn
+  #  - pandas
+  imports:
+    - bioIO
+
+about:
+  home: http://www.leossun.science
+  license: Apache License 2.0
