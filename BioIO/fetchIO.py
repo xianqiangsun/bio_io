@@ -65,6 +65,7 @@ def pdb_id_2_pdb(pdb_id):
 
 def chembl_id_structures(chembl_id):
     '''
+    Note: refer to the function in bioservises
     :param chembl_id:
     :return: json format of the chemblid
     '''
@@ -72,12 +73,24 @@ def chembl_id_structures(chembl_id):
     # Note json format of the return
     return resjson
 
-def chembl_id_targets(chembl):
-    resjson = s.get_target_by_chemblId('CHEMBL240')
+def chembl_id_targets(chembl_id):
+    '''
+    Note: refer to the function in bioservises
+    :param chembl_id:
+    :return:
+    '''
+    resjson = c.get_target_by_chemblId(chembl_id)
     return resjson
 
-def chembl_id_activities():
-    pass
+def chembl_id_activities(chembl_id):
+    '''
+    Note: refer to the function in bioservises
+    :param chembl_id:
+    :return:
+    '''
+    resjson = c.get_compounds_activities(chembl_id)
+    return resjson
+
 
 
 
