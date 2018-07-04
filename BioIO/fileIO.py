@@ -40,7 +40,10 @@ def write_file(file_name, object_name):
     f = open(file_name, 'wb')
     f.writelines(object_name)
     f.close()
-
+    
+def pd_read_table(file_name):
+    t = pd.read_table(file_name)
+    return t
 
 def read_json(file_name):
     f = open(file_name).read()
