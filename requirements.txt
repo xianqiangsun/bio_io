@@ -1,0 +1,12 @@
+json
+numpy
+six
+scipy
+rdkit
+pandas
+PyYAML
+yaml
+scipy
+h5py
+hdf5
+pandas

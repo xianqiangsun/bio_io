@@ -1,5 +1,5 @@
 package:
-  name: bioIO
+  name: BioIO
   version: 1.0.1
 
 build:
@@ -48,7 +48,7 @@ requirements:
   #  - scikit-learn
   #  - pandas
   imports:
-    - bioIO
+    - BioIO
 
 about:
   home: http://www.leossun.science
