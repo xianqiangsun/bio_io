@@ -3,6 +3,7 @@ import pickle
 import json
 from bioservices.apps.fasta import FASTA
 from rdkit import Chem
+import pandas as pd
 
 from Bio.PDB import *
 
