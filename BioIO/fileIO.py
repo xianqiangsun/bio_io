@@ -4,11 +4,22 @@ import json
 from bioservices.apps.fasta import FASTA
 from rdkit import Chem
 import pandas as pd
+import os
 
 from Bio.PDB import *
 
 from BioIO.utility import Read
 
+
+def make_directory(folder):
+    '''
+    :param folder:
+    :return: make the directory if it is not exist
+    '''
+    try:
+        os.stat(folder)
+    except:
+        os.mkdir(folder)
 
 def read_pickle(pickle_file):
     p = pickle.load(open(pickle_file, 'rb'))
