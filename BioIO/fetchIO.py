@@ -27,6 +27,16 @@ def uniprot_id_2_protein_name(uni_id):
     return protein_names
 
 
+def uniprot_id_2_pdb_id(uni_id):
+    """
+    :param uni_id:
+    :return: a list of pdb structures corresponding to the pdb
+    """
+    output = u.mapping("ID", "PDB_ID", uni_id)
+    output_pdb_id = list(output.values())[0]
+    return output_pdb_id
+
+
 def uniprot_id_2_gene_name(uni_id):
     '''
     :param uni_id:
@@ -73,6 +83,7 @@ def chembl_id_structures(chembl_id):
     # Note json format of the return
     return resjson
 
+
 def chembl_id_targets(chembl_id):
     '''
     Note: refer to the function in bioservises
@@ -82,6 +93,7 @@ def chembl_id_targets(chembl_id):
     resjson = c.get_target_by_chemblId(chembl_id)
     return resjson
 
+
 def chembl_id_activities(chembl_id):
     '''
     Note: refer to the function in bioservises
@@ -90,8 +102,3 @@ def chembl_id_activities(chembl_id):
     '''
     resjson = c.get_compounds_activities(chembl_id)
     return resjson
-
-
-
-
-
