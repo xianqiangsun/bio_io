@@ -26,6 +26,19 @@ def uniprot_id_2_protein_name(uni_id):
     print(uni_id, protein_names)
     return protein_names
 
+def uniprot_id_2_protein_family(uni_id):
+    '''
+    :param uni_id:
+    :return: a list of protein family to the corresponding uniprot id
+    check all coloumns  bioservices.uniprot.UniProt._valid_columns
+    '''
+    all_families = u.search(str(uni_id), columns='families').split('\n')[1:-1]
+    protein_families = []
+    for each_name in all_families:
+        if each_name!= '':
+            protein_families.append(each_name)
+            print (uni_id,each_name)
+    return protein_families
 
 def uniprot_id_2_pdb_id(uni_id):
     """
