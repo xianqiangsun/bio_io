@@ -46,8 +46,11 @@ def uniprot_id_2_pdb_id(uni_id):
     :return: a list of pdb structures corresponding to the pdb
     """
     output = u.mapping("ID", "PDB_ID", uni_id)
-    output_pdb_id = list(output.values())[0]
-    return output_pdb_id
+    if len(output)==0:
+        return None
+    else:
+        output_pdb_id = list(output.values())[0]
+        return output_pdb_id
 
 
 def uniprot_id_2_gene_name(uni_id):
