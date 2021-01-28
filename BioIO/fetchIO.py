@@ -47,7 +47,7 @@ def map_pdb_to_uniprot(pdb_id):
         'uniprot_name': uniprot_name
     }
 
-print (map_pdb_to_uniprot(pdb_id))
+#print (map_pdb_to_uniprot(pdb_id))
 
 """
 
