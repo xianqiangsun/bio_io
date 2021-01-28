@@ -11,8 +11,6 @@ c = ChEMBL(verbose=False)
 
 """
 pdb chain to uniprot id: ftp.ebi.ac.uk/pub/databases/msd/sifts/csv/pdb_chain_uniprot.csv
-"""
-
 import requests
 from xml.etree.ElementTree import fromstring
 
@@ -47,7 +45,7 @@ def map_pdb_to_uniprot(pdb_id):
         'uniprot_name': uniprot_name
     }
 
-#print (map_pdb_to_uniprot(pdb_id))
+print map_pdb_to_uniprot(pdb_id)
 
 """
 
