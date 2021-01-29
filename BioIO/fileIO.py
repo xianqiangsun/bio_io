@@ -124,6 +124,31 @@ def read_pdb_file(pdb_file):
     structure = parser.get_structure('structure', pdb_file)
     return structure
 
+def get_het_residues(pdb_file):
+    """
+    :param pdb_file:
+    :return: the het residues from the database
+    """
+    het_res = []
+    s = read_pdb_file(pdb_file)
+    for each_r in s.get_residues():
+        if each_r.get_id()[0][0] == "H":
+            het_res.append(each_r)
+    return het_res
+
+def get_water_residues(pdb_file):
+    """
+    :param pdb_file:
+    :return: the het residues from the database
+    """
+    w_res = []
+    s = read_pdb_file(pdb_file)
+    for each_r in s.get_residues():
+        if each_r.get_id()[0][0] == "W":
+            w_res.append(each_r)
+    return w_res
+
+
 
 def write_pdb():
     pass
