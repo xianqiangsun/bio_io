@@ -2,6 +2,7 @@ from bioservices import UniProt
 from bioservices import PDB
 from bioservices.apps.fasta import FASTA
 from bioservices import ChEMBL
+import os
 
 # Leos from uniprot id to the protein name
 f = FASTA()
@@ -119,13 +120,15 @@ def uniprot_id_2_fasta(uni_id):
     return fasta_object
 
 
-def pdb_id_2_pdb(pdb_id):
+def pdb_id_2_pdb(pdb_id,output_file):
     '''
     :param pdb_id:
     :return: pdb structure of the pdb_id the output is in xml format
     '''
-    pdb_file = s.get_file(pdb_id, "pdb")
-    return pdb_file
+    #pdb_file = s.get_file(pdb_id, "pdb")
+    cmd_line = "wget http://files.rcsb.org/download/" + pdb_id + ".pdb --output-document=" + output_file
+    os.system(cmd_line)
+    #return pdb_file
 
 
 def chembl_id_structures(chembl_id):
